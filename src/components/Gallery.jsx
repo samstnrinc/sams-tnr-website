@@ -1,17 +1,18 @@
 import { useState, useEffect, useCallback } from 'react'
 
+const base = import.meta.env.BASE_URL || '/'
 const images = [
-  '/gallery/cat1.jpg',
-  '/gallery/cat2.jpg',
-  '/gallery/cat3.jpg',
-  '/gallery/cat4.jpg',
-  '/gallery/cat5.jpg',
-  '/gallery/cat6.jpg',
-  '/gallery/cat7.jpg',
-  '/gallery/cat8.jpg',
-  '/gallery/cat9.jpg',
-  '/gallery/cat10.avif',
-  '/gallery/cat11.png',
+  `${base}gallery/cat1.jpg`,
+  `${base}gallery/cat2.jpg`,
+  `${base}gallery/cat3.jpg`,
+  `${base}gallery/cat4.jpg`,
+  `${base}gallery/cat5.jpg`,
+  `${base}gallery/cat6.jpg`,
+  `${base}gallery/cat7.jpg`,
+  `${base}gallery/cat8.jpg`,
+  `${base}gallery/cat9.jpg`,
+  `${base}gallery/cat10.avif`,
+  `${base}gallery/cat11.png`,
 ]
 
 export default function Gallery() {
