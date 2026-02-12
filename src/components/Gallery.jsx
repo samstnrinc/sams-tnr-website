@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 const base = import.meta.env.BASE_URL || '/'
 const images = [
@@ -16,21 +16,41 @@ const images = [
 ]
 
 export default function Gallery() {
-  const [idx, setIdx] = useState(0)
-  const [nextIdx, setNextIdx] = useState(null)
+  // Two-layer approach: layer A and layer B alternate who's on top
+  const [layerA, setLayerA] = useState(0)
+  const [layerB, setLayerB] = useState(0)
+  const [showA, setShowA] = useState(true) // true = A is visible on top
   const [paused, setPaused] = useState(false)
+  const transitioning = useRef(false)
+
+  const activeIdx = showA ? layerA : layerB
 
   const goTo = useCallback((i) => {
-    if (i === idx) return
-    setNextIdx(i)
-    setTimeout(() => {
-      setIdx(i)
-      setNextIdx(null)
-    }, 700)
-  }, [idx])
+    if (i === activeIdx || transitioning.current) return
+    transitioning.current = true
+    // Load the new image into the hidden layer, then fade it in
+    if (showA) {
+      setLayerB(i)
+      // Small delay to ensure the hidden layer has the new src before fading
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setShowA(false)
+          setTimeout(() => { transitioning.current = false }, 700)
+        })
+      })
+    } else {
+      setLayerA(i)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setShowA(true)
+          setTimeout(() => { transitioning.current = false }, 700)
+        })
+      })
+    }
+  }, [activeIdx, showA])
 
-  const prev = () => goTo(idx === 0 ? images.length - 1 : idx - 1)
-  const next = useCallback(() => goTo(idx === images.length - 1 ? 0 : idx + 1), [idx, goTo])
+  const prev = () => goTo(activeIdx === 0 ? images.length - 1 : activeIdx - 1)
+  const next = useCallback(() => goTo(activeIdx === images.length - 1 ? 0 : activeIdx + 1), [activeIdx, goTo])
 
   useEffect(() => {
     if (paused) return
@@ -50,22 +70,20 @@ export default function Gallery() {
           onTouchEnd={() => setPaused(false)}
         >
           <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden relative">
-            {/* Current image */}
+            {/* Layer A */}
             <img
-              src={images[idx]}
-              alt={`Gallery image ${idx + 1}`}
+              src={images[layerA]}
+              alt={`Gallery image ${layerA + 1}`}
               className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
-              style={{ opacity: nextIdx !== null ? 0 : 1 }}
+              style={{ opacity: showA ? 1 : 0, zIndex: showA ? 2 : 1 }}
             />
-            {/* Next image (crossfade in) */}
-            {nextIdx !== null && (
-              <img
-                src={images[nextIdx]}
-                alt={`Gallery image ${nextIdx + 1}`}
-                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
-                style={{ opacity: 1 }}
-              />
-            )}
+            {/* Layer B */}
+            <img
+              src={images[layerB]}
+              alt={`Gallery image ${layerB + 1}`}
+              className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
+              style={{ opacity: showA ? 0 : 1, zIndex: showA ? 1 : 2 }}
+            />
           </div>
           <button
             onClick={prev}
@@ -85,7 +103,7 @@ export default function Gallery() {
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`w-3 h-3 rounded-full transition-colors ${i === idx ? 'bg-rust' : 'bg-gray-400'}`}
+              className={`w-3 h-3 rounded-full transition-colors ${i === activeIdx ? 'bg-rust' : 'bg-gray-400'}`}
             />
           ))}
           <button
