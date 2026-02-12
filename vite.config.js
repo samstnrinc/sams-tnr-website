@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/sams-tnr-website/',
+  base: '/',
   server: {
     port: 3555,
     host: '0.0.0.0',
