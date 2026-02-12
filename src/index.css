@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rust: #7C2D12;
+  --color-rust-light: #9A3412;
+  --color-rust-dark: #5C1D0E;
+  --color-gray-brand: #CBCBCA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
