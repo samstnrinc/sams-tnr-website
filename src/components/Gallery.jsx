@@ -17,23 +17,24 @@ const images = [
 
 export default function Gallery() {
   const [idx, setIdx] = useState(0)
+  const [nextIdx, setNextIdx] = useState(null)
   const [paused, setPaused] = useState(false)
-  const [fade, setFade] = useState(true)
 
   const goTo = useCallback((i) => {
-    setFade(false)
+    if (i === idx) return
+    setNextIdx(i)
     setTimeout(() => {
       setIdx(i)
-      setFade(true)
-    }, 300)
-  }, [])
+      setNextIdx(null)
+    }, 700)
+  }, [idx])
 
   const prev = () => goTo(idx === 0 ? images.length - 1 : idx - 1)
   const next = useCallback(() => goTo(idx === images.length - 1 ? 0 : idx + 1), [idx, goTo])
 
   useEffect(() => {
     if (paused) return
-    const timer = setInterval(next, 4000)
+    const timer = setInterval(next, 5000)
     return () => clearInterval(timer)
   }, [paused, next])
 
@@ -48,13 +49,23 @@ export default function Gallery() {
           onTouchStart={() => setPaused(true)}
           onTouchEnd={() => setPaused(false)}
         >
-          <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
+          <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden relative">
+            {/* Current image */}
             <img
               src={images[idx]}
               alt={`Gallery image ${idx + 1}`}
-              className="w-full h-full object-contain transition-opacity duration-300"
-              style={{ opacity: fade ? 1 : 0 }}
+              className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
+              style={{ opacity: nextIdx !== null ? 0 : 1 }}
             />
+            {/* Next image (crossfade in) */}
+            {nextIdx !== null && (
+              <img
+                src={images[nextIdx]}
+                alt={`Gallery image ${nextIdx + 1}`}
+                className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
+                style={{ opacity: 1 }}
+              />
+            )}
           </div>
           <button
             onClick={prev}
