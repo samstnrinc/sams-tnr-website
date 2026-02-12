@@ -1,25 +1,39 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
-const hashLinks = [
-  { href: '#mission', label: 'Mission' },
-  { href: '#why-tnr', label: 'Why TNR?' },
-  { href: '#services', label: 'Services' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#donate', label: 'Donate' },
-  { href: '#contact', label: 'Contact' },
+const navLinks = [
+  { id: 'mission', label: 'Mission' },
+  { id: 'why-tnr', label: 'Why TNR?' },
+  { id: 'services', label: 'Services' },
+  { id: 'gallery', label: 'Gallery' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'donate', label: 'Donate' },
+  { id: 'contact', label: 'Contact' },
 ]
+
+function scrollToSection(id) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const isHome = location.pathname === '/'
+  const navigate = useNavigate()
 
-  // Close menu on route change
-  useEffect(() => {
+  const handleClick = (e, id) => {
+    e.preventDefault()
     setOpen(false)
-  }, [location.pathname])
+    if (location.pathname !== '/') {
+      navigate('/')
+      // Wait for home page to render then scroll
+      setTimeout(() => scrollToSection(id), 100)
+    } else {
+      scrollToSection(id)
+    }
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-rust text-white shadow-lg z-50">
@@ -34,16 +48,15 @@ export default function Navbar() {
 
         {/* Desktop */}
         <div className="hidden md:flex gap-4 items-center">
-          {hashLinks.map(l => (
-            isHome ? (
-              <a key={l.href} href={l.href} className="hover:text-gray-brand transition-colors text-sm font-medium">
-                {l.label}
-              </a>
-            ) : (
-              <Link key={l.href} to={`/${l.href}`} className="hover:text-gray-brand transition-colors text-sm font-medium">
-                {l.label}
-              </Link>
-            )
+          {navLinks.map(l => (
+            <a
+              key={l.id}
+              href={`#${l.id}`}
+              onClick={(e) => handleClick(e, l.id)}
+              className="hover:text-gray-brand transition-colors text-sm font-medium"
+            >
+              {l.label}
+            </a>
           ))}
         </div>
 
@@ -56,26 +69,15 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-rust-dark px-4 pb-4 max-h-[80vh] overflow-y-auto">
-          {hashLinks.map(l => (
-            isHome ? (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block py-2 hover:text-gray-brand transition-colors"
-              >
-                {l.label}
-              </a>
-            ) : (
-              <Link
-                key={l.href}
-                to={`/${l.href}`}
-                onClick={() => setOpen(false)}
-                className="block py-2 hover:text-gray-brand transition-colors"
-              >
-                {l.label}
-              </Link>
-            )
+          {navLinks.map(l => (
+            <a
+              key={l.id}
+              href={`#${l.id}`}
+              onClick={(e) => handleClick(e, l.id)}
+              className="block py-2 hover:text-gray-brand transition-colors"
+            >
+              {l.label}
+            </a>
           ))}
         </div>
       )}
