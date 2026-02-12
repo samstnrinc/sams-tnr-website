@@ -10,14 +10,24 @@ export default function Donate() {
           and supplies.
         </p>
         <p className="text-gray-600 mb-8">All donations are tax-deductible to the extent allowed by law.</p>
-        <a
-          href="https://www.paypal.com/donate/?hosted_button_id=XQBBVZ62FLSQL"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-rust hover:bg-rust/80 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
-        >
-          Donate via PayPal or Venmo
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/lets-help-community-cats"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-rust hover:bg-rust/80 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+          >
+            Donate via Zeffy
+          </a>
+          <a
+            href="https://www.paypal.com/donate/?hosted_button_id=XQBBVZ62FLSQL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+          >
+            Donate via PayPal or Venmo
+          </a>
+        </div>
       </div>
     </section>
   )
