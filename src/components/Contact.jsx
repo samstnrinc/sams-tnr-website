@@ -15,7 +15,7 @@ export default function Contact() {
             📞 Call
           </a>
           <a
-            href="mailto:samstnrinc@gmail.com"
+            href="mailto:info@samstnr.org"
             className="bg-rust text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-rust/80 transition-colors"
           >
             ✉️ Email
