@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,7 +25,29 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.1"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "include": [
+      "/",
+      "/intake",
+      "/volunteer", 
+      "/trap-loan",
+      "/colony-register",
+      "/post-surgery",
+      "/transport-auth",
+      "/foster",
+      "/donation-receipt",
+      "/incident-report",
+      "/property-access"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "skipThirdPartyRequests": true,
+    "cacheAjaxRequests": false,
+    "preconnectThirdParty": false
   }
 }
