@@ -15,6 +15,20 @@ const images = [
   `${base}gallery/cat11.png`,
 ]
 
+const imageAltTexts = [
+  "Community cat rescued through TNR program in Brooks County Georgia",
+  "Feral cat being treated by Sam's TNR veterinary partners",
+  "Spayed and neutered cat with tipped ear showing TNR success",
+  "Community cat colony managed through trap-neuter-return services",
+  "Brooks County feral cat receiving medical care and vaccination",
+  "TNR program cat recovering after spay neuter surgery",
+  "Community cats being cared for in Barney Georgia area",
+  "Trap-neuter-return success story showing healthy community cat",
+  "Feral cat rescue and TNR services in northern Brooks County",
+  "Sam's TNR community cat with ear tip showing successful sterilization",
+  "Brooks County Georgia community cat benefiting from TNR program"
+]
+
 export default function Gallery() {
   // Two-layer approach: layer A and layer B alternate who's on top
   const [layerA, setLayerA] = useState(0)
@@ -73,14 +87,14 @@ export default function Gallery() {
             {/* Layer A */}
             <img
               src={images[layerA]}
-              alt={`Gallery image ${layerA + 1}`}
+              alt={imageAltTexts[layerA]}
               className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
               style={{ opacity: showA ? 1 : 0, zIndex: showA ? 2 : 1 }}
             />
             {/* Layer B */}
             <img
               src={images[layerB]}
-              alt={`Gallery image ${layerB + 1}`}
+              alt={imageAltTexts[layerB]}
               className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out"
               style={{ opacity: showA ? 0 : 1, zIndex: showA ? 1 : 2 }}
             />
