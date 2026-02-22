@@ -7,6 +7,7 @@ const navLinks = [
   { id: 'services', label: 'Services' },
   { id: 'gallery', label: 'Gallery' },
   { id: 'faq', label: 'FAQ' },
+  { id: 'blog', label: 'Blog', isRoute: true },
   { id: 'donate', label: 'Donate' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -23,15 +24,21 @@ export default function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const handleClick = (e, id) => {
-    e.preventDefault()
+  const handleClick = (e, link) => {
     setOpen(false)
+    
+    if (link.isRoute) {
+      // For route links like Blog, navigate directly
+      return
+    }
+    
+    e.preventDefault()
     if (location.pathname !== '/') {
       navigate('/')
       // Wait for home page to render then scroll
-      setTimeout(() => scrollToSection(id), 100)
+      setTimeout(() => scrollToSection(link.id), 100)
     } else {
-      scrollToSection(id)
+      scrollToSection(link.id)
     }
   }
 
@@ -49,14 +56,25 @@ export default function Navbar() {
         {/* Desktop */}
         <div className="hidden md:flex gap-4 items-center">
           {navLinks.map(l => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              onClick={(e) => handleClick(e, l.id)}
-              className="hover:text-gray-brand transition-colors text-sm font-medium"
-            >
-              {l.label}
-            </a>
+            l.isRoute ? (
+              <Link
+                key={l.id}
+                to={`/${l.id}`}
+                onClick={() => handleClick(null, l)}
+                className="hover:text-gray-brand transition-colors text-sm font-medium"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                onClick={(e) => handleClick(e, l)}
+                className="hover:text-gray-brand transition-colors text-sm font-medium"
+              >
+                {l.label}
+              </a>
+            )
           ))}
         </div>
 
@@ -70,14 +88,25 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-rust-dark px-4 pb-4 max-h-[80vh] overflow-y-auto">
           {navLinks.map(l => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              onClick={(e) => handleClick(e, l.id)}
-              className="block py-2 hover:text-gray-brand transition-colors"
-            >
-              {l.label}
-            </a>
+            l.isRoute ? (
+              <Link
+                key={l.id}
+                to={`/${l.id}`}
+                onClick={() => handleClick(null, l)}
+                className="block py-2 hover:text-gray-brand transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                onClick={(e) => handleClick(e, l)}
+                className="block py-2 hover:text-gray-brand transition-colors"
+              >
+                {l.label}
+              </a>
+            )
           ))}
         </div>
       )}
