@@ -2,18 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 const ImpactCounter = () => {
   const [counts, setCounts] = useState({
-    catsHelped: 0,
     birthsPrevented: 0,
-    coloniesRegistered: 0,
     yearsActive: 0
   });
 
-  // Target values (James mentioned 250+ cats neutered)
   const targets = {
-    catsHelped: 267, // Slightly higher than 250+ mentioned
     birthsPrevented: 8010, // Conservative estimate: 30 births prevented per cat over lifetime
-    coloniesRegistered: 42, // Reasonable number for Brooks County area
-    yearsActive: 3 // Sam's TNR founded relatively recently
+    yearsActive: 15
   };
 
   useEffect(() => {
@@ -58,21 +53,7 @@ const ImpactCounter = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Cats Helped */}
-          <div className="bg-white rounded-lg shadow-lg p-8 text-center transform hover:scale-105 transition-transform duration-300">
-            <div className="w-16 h-16 bg-rust-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-rust-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 8.5c-1.84 0-3.32.52-3.32 1.16S10.16 10.82 12 10.82s3.32-.52 3.32-1.16S13.84 8.5 12 8.5zM12 5C6.5 5 2 7.91 2 11.5S6.5 18 12 18s10-2.91 10-6.5S17.5 5 12 5zm0 2c4.14 0 7.5 2.24 7.5 5s-3.36 5-7.5 5-7.5-2.24-7.5-5S7.86 7 12 7zm-5.13 5.88c-.24.11-.41.36-.41.67 0 .41.34.75.75.75.25 0 .46-.12.59-.31.86.73 2.15 1.26 3.7 1.26s2.84-.53 3.7-1.26c.13.19.34.31.59.31.41 0 .75-.34.75-.75 0-.31-.17-.56-.41-.67C14.84 13.47 13.48 14 12 14s-2.84-.53-4.13-1.12z"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-rust-700 mb-2">
-              {counts.catsHelped.toLocaleString()}
-            </div>
-            <div className="text-gray-600 font-semibold mb-1">Cats Helped</div>
-            <div className="text-sm text-gray-500">Spayed & Neutered</div>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {/* Births Prevented */}
           <div className="bg-white rounded-lg shadow-lg p-8 text-center transform hover:scale-105 transition-transform duration-300">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -85,20 +66,6 @@ const ImpactCounter = () => {
             </div>
             <div className="text-gray-600 font-semibold mb-1">Births Prevented</div>
             <div className="text-sm text-gray-500">Over Cat Lifetimes</div>
-          </div>
-
-          {/* Colonies Registered */}
-          <div className="bg-white rounded-lg shadow-lg p-8 text-center transform hover:scale-105 transition-transform duration-300">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
-              </svg>
-            </div>
-            <div className="text-4xl font-bold text-blue-700 mb-2">
-              {counts.coloniesRegistered}
-            </div>
-            <div className="text-gray-600 font-semibold mb-1">Colonies Registered</div>
-            <div className="text-sm text-gray-500">Active Management</div>
           </div>
 
           {/* Years Active */}
