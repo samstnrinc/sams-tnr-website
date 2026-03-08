@@ -3,7 +3,7 @@ import { getBlogPostBySlug } from '../../data/blog-posts.jsx'
 import { useEffect } from 'react'
 
 function formatDate(dateString) {
-  const date = new Date(dateString)
+  const date = new Date(dateString + 'T12:00:00')
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',

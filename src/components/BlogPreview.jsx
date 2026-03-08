@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { blogPosts } from '../data/blog-posts'
+import { getAllBlogPosts } from '../data/blog-posts'
 
 export default function BlogPreview() {
-  const latestPost = blogPosts[0]
+  const latestPost = getAllBlogPosts()[0]
 
   return (
     <section id="blog" className="py-16 bg-gray-50">
@@ -19,7 +19,7 @@ export default function BlogPreview() {
           className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden block"
         >
           <div className="p-8">
-            <p className="text-sm text-gray-400 mb-2">{new Date(latestPost.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            <p className="text-sm text-gray-400 mb-2">{new Date(latestPost.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <h3 className="text-2xl font-bold text-gray-900 group-hover:text-rust transition-colors mb-3">
               {latestPost.title}
             </h3>

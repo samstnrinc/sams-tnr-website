@@ -88,6 +88,96 @@ export const blogPosts = [
       </article>
     )
   },
+  {
+    slug: 'three-more-quitman-cats-march-2026',
+    title: 'Three More Quitman Cats Altered',
+    seoTitle: 'Three More Quitman Cats Altered — March 2026 | Sam\'s TNR',
+    metaDescription: 'Sam\'s TNR partnered with All Saints Cat TNR and Paws First Mobile Veterinary Clinic to spay two females and neuter one male from the Quitman colony — bringing the location total to 18.',
+    date: '2026-03-07',
+    excerpt: 'Two spays and one neuter from the Quitman colony today — 18 cats altered at this location and counting. Same great partners, same mission.',
+    content: (
+      <article className="prose prose-lg max-w-none">
+        <p className="text-xl text-gray-600 mb-8">
+          Three more community cats from the Quitman colony were trapped, transported, and surgically altered today — two females spayed and one male neutered. Every surgery brings this colony closer to stabilization.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div>
+            <img src="/images/blog/mar-2026-quitman/cat-1.jpg" alt="Tortoiseshell community cat in humane trap after spay surgery in Quitman" className="rounded-xl shadow-md w-full h-64 object-cover" />
+            <p className="text-sm text-gray-500 mt-2 text-center">Spayed female — tortoiseshell with plenty of attitude</p>
+          </div>
+          <div>
+            <img src="/images/blog/mar-2026-quitman/cat-2.jpg" alt="Dark tortoiseshell community cat resting in trap after spay surgery" className="rounded-xl shadow-md w-full h-64 object-cover" />
+            <p className="text-sm text-gray-500 mt-2 text-center">Spayed female — resting comfortably post-surgery</p>
+          </div>
+          <div>
+            <img src="/images/blog/mar-2026-quitman/cat-3.jpg" alt="Black community cat with green eyes in humane trap after neuter surgery" className="rounded-xl shadow-md w-full h-64 object-cover" />
+            <p className="text-sm text-gray-500 mt-2 text-center">Neutered male — those green eyes say it all</p>
+          </div>
+        </div>
+
+        <div className="bg-rust text-white rounded-xl p-8 text-center mb-8">
+          <h2 className="text-2xl font-bold mb-4">Quitman Colony Progress</h2>
+          <div className="grid grid-cols-3 gap-6">
+            <div>
+              <p className="text-4xl font-bold mb-2">2</p>
+              <p>Females spayed today</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold mb-2">1</p>
+              <p>Male neutered today</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold mb-2">18</p>
+              <p>Total altered at this location</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">18 Down, More to Go</h2>
+        <p className="mb-6">
+          Just two weeks ago, we were celebrating 15 cats altered at this Quitman location. Today that number jumps to <strong>18</strong>. What started as a handful of strays showing up at a homeowner's door has turned into one of our most active colony management sites in Brooks County.
+        </p>
+        <p className="mb-6">
+          The math hasn't changed: every unspayed female can produce up to three litters a year. These three cats alone could have been responsible for dozens of kittens by year's end. Now they won't be — and that's the whole point of TNR.
+        </p>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">Same Team, Same Mission</h2>
+        <p className="mb-6">
+          Today's surgeries were once again made possible by our incredible partners. <a href="http://allsaintscattnr.org" target="_blank" rel="noopener noreferrer" className="text-rust underline hover:text-rust-dark font-semibold">All Saints Cat TNR</a> coordinated and sponsored the clinic, and <a href="http://www.pawsfirstvet.com/s-projects-side-by-side" target="_blank" rel="noopener noreferrer" className="text-rust underline hover:text-rust-dark font-semibold">Paws First Mobile Veterinary Clinic</a> performed the surgeries on-site. These partnerships are the backbone of what we do — without them, cats like these three would still be adding to the population.
+        </p>
+
+        <div className="bg-gray-100 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-rust mb-3">Today's Partners</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-bold mb-2">🐱 All Saints Cat TNR</h4>
+              <p className="text-sm mb-2">Coordinated and sponsored today's clinic.</p>
+              <a href="http://allsaintscattnr.org" target="_blank" rel="noopener noreferrer" className="text-rust underline text-sm hover:text-rust-dark">allsaintscattnr.org</a>
+            </div>
+            <div>
+              <h4 className="font-bold mb-2">🏥 Paws First Mobile Veterinary Clinic</h4>
+              <p className="text-sm mb-2">Provided on-site spay/neuter surgeries and veterinary care.</p>
+              <a href="http://www.pawsfirstvet.com/s-projects-side-by-side" target="_blank" rel="noopener noreferrer" className="text-rust underline text-sm hover:text-rust-dark">pawsfirstvet.com</a>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">You Can Help</h2>
+        <p className="mb-6">
+          Every surgery costs money — traps, transport, veterinary fees, and recovery supplies add up fast. Your donation directly funds the next cat's surgery and helps us keep this colony on the path to stabilization.
+        </p>
+        <div className="bg-gray-200 rounded-lg p-6 text-center">
+          <p className="text-lg mb-4">
+            <strong>Want to support TNR in Brooks County?</strong> Every dollar goes directly toward spay/neuter surgeries for community cats.
+          </p>
+          <p>
+            <a href="/#donate" className="bg-rust text-white px-6 py-3 rounded-lg font-bold hover:bg-rust-dark transition-colors inline-block">Donate to Sam's TNR</a>
+          </p>
+        </div>
+      </article>
+    )
+  },
   /* Future posts — uncomment when ready
   {
     slug: 'what-is-tnr-and-why-it-works',
