@@ -1,5 +1,153 @@
 export const blogPosts = [
   {
+    slug: 'busy-behind-scenes-april-2026-update',
+    title: 'Busy Behind the Scenes: April 2026 Update from Sam\'s TNR',
+    seoTitle: 'Sam\'s TNR April 2026 Update: Colony Progress & Foster Success Stories | Brooks County TNR',
+    metaDescription: 'Sam\'s TNR April 2026 update: Thanks to generous donors, we have funding for dozens of spay/neuter surgeries. Quitman colony reaches 20 cats altered, plus fostering success stories.',
+    date: '2026-04-17',
+    excerpt: 'Thanks to generous donors, we now have funding for dozens of spay/neuter surgeries. Plus updates from our Quitman colony and heartwarming foster stories.',
+    content: (
+      <article className="prose prose-lg max-w-none">
+        <p className="text-xl text-gray-600 mb-8">
+          It's been a while since our last update, but that doesn't mean we've been idle. Behind the scenes, Sam's TNR has been making steady progress thanks to incredible community support, continued colony management, and some especially heartwarming foster work.
+        </p>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">Thank You to Our Generous Donors</h2>
+        <p className="mb-6">
+          First and most importantly, we want to express our heartfelt gratitude to several very generous donors whose recent contributions have made a significant impact. <strong>Thanks to their support, we now have funding secured to spay and neuter several dozen cats</strong> based on our current veterinary partnerships and cost arrangements.
+        </p>
+        <p className="mb-6">
+          This means dozens of community cats won't contribute to the cycle of overpopulation, and hundreds of potential kittens will never be born to face uncertain futures. Your donations create real, immediate impact for cats in Brooks County.
+        </p>
+
+        <div className="bg-rust text-white rounded-xl p-8 text-center mb-8">
+          <h2 className="text-2xl font-bold mb-4">Donor Impact</h2>
+          <div className="grid grid-cols-2 gap-6">
+            <div>
+              <p className="text-4xl font-bold mb-2">Several Dozen</p>
+              <p>Cats we can now spay/neuter with current funding</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold mb-2">Hundreds</p>
+              <p>Future feral kittens prevented through your generosity</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">Quitman Colony Reaches Milestone: 20 Cats Altered</h2>
+        <p className="mb-6">
+          Our ongoing work at the Quitman colony continues to show steady progress. <strong>Just this week, we had two more cats from this location spayed, bringing the total number of cats in this colony to 20 spayed or neutered.</strong>
+        </p>
+        <p className="mb-6">
+          This milestone represents exactly why persistence matters in TNR work. What started as a few strays has become one of our most successful colony management sites. These 20 cats are now living healthier lives while contributing to a stable, managed population that doesn't produce new litters.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <img src="/images/blog/april-2026-update/quitman-cat-1.jpg" alt="Dark-colored community cat with bright eyes recovering in cage after spay surgery at Quitman colony" className="rounded-xl shadow-md w-full h-64 object-cover" />
+          <img src="/images/blog/april-2026-update/quitman-cat-2.jpg" alt="Beautiful tortoiseshell cat with orange and black markings resting in recovery cage after spay surgery" className="rounded-xl shadow-md w-full h-64 object-cover" />
+        </div>
+
+        <div className="bg-gray-100 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-rust mb-3 text-center">Quitman Colony Progress</h3>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <p className="text-3xl font-bold text-rust mb-2">2</p>
+              <p className="text-sm">Cats spayed this week</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-rust mb-2">20</p>
+              <p className="text-sm">Total cats altered at this location</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-rust mb-2">0</p>
+              <p className="text-sm">New litters expected from these 20 cats</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">Foster Stories: Giving Kittens a Chance</h2>
+        <p className="mb-6">
+          While our primary focus is TNR for population control, we're often asked to foster mother cats with kittens until the little ones are old enough for adoption. This work ensures that friendly cats and kittens don't face uncertain futures on the streets.
+        </p>
+
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h3 className="text-xl font-bold text-rust mb-3">🐱 Mother with Six Kittens</h3>
+          <p className="mb-4">
+            Right now we're working with the <strong><a href="https://www.thomasvillehumane.org" target="_blank" rel="noopener noreferrer" className="text-rust underline hover:text-rust-dark">Thomasville Humane Society</a></strong>, fostering a mother cat with six healthy kittens. Watching these babies grow stronger each day while their mother provides excellent care is one of the most rewarding aspects of our work.
+          </p>
+          <p className="text-sm text-gray-600 mb-4">
+            <strong>Partnership spotlight:</strong> Working with established shelters like Thomasville Humane Society helps ensure these cats find loving, permanent homes through proper adoption channels.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="/images/blog/april-2026-update/foster-mom-kittens.jpg" alt="Beautiful gray mother cat with golden eyes lovingly nursing six healthy gray and cream-colored kittens on soft white bedding in Sam's TNR foster care" className="rounded-xl shadow-md w-full h-48 object-cover" />
+            <img src="/images/blog/april-2026-update/orphan-kitten-1.jpg" alt="Adorable small gray and white kitten sitting alertly next to foster supplies, showing healthy development in Sam's TNR care" className="rounded-xl shadow-md w-full h-48 object-cover" />
+            <img src="/images/blog/april-2026-update/orphan-kitten-2.jpg" alt="Young gray kittens resting and playing together on soft bedding during foster care with Sam's TNR" className="rounded-xl shadow-md w-full h-48 object-cover" />
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h3 className="text-xl font-bold text-rust mb-3">🍼 Orphaned Kitten: Eyes Just Opening</h3>
+          <p className="mb-4">
+            We're also fostering an orphaned kitten whose eyes are just beginning to open! This tiny one requires around-the-clock care, but seeing those first glimpses of the world makes every 2 AM feeding worth it.
+          </p>
+          <p className="text-sm text-gray-600">
+            <strong>Critical care:</strong> Orphaned kittens this young require specialized feeding, warmth, and stimulation to survive and thrive.
+          </p>
+        </div>
+
+        <div className="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
+          <h3 className="text-xl font-bold text-green-700 mb-3">💚 Forever Homes Ahead</h3>
+          <p className="text-gray-700">
+            <strong>The best part of foster work?</strong> Knowing these little ones will soon have forever homes. Each successful foster placement represents a life saved and a family enriched by the love of a rescued cat.
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-bold text-rust mt-8 mb-4">The Work Continues</h2>
+        <p className="mb-6">
+          Between colony management, foster care, and preparing for upcoming TNR efforts, Sam's TNR stays busy year-round. Every day brings new challenges and new opportunities to help community cats in Brooks County.
+        </p>
+        <p className="mb-6">
+          <strong>What makes this work sustainable is community support.</strong> From donors who fund surgeries to volunteers who provide foster care to neighbors who alert us to cats in need – it truly takes a community to create lasting change.
+        </p>
+
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+          <h3 className="text-xl font-bold text-blue-700 mb-3">🤝 Community Impact</h3>
+          <p className="text-gray-700 mb-4">
+            <strong>Inspired by our TNR efforts, a neighbor has joined in to help trap and spay a feral female cat.</strong> This kind of grassroots involvement is exactly how we create lasting change in our community. Thank you, Blaire!
+          </p>
+          <p className="text-gray-700">
+            <strong>We have also had caregivers of two larger feral cat colonies reach out to us for assistance.</strong> While we will soon have availability to help them, volunteers are always welcome to join our efforts in Brooks County to assist with trapping and transportation.
+          </p>
+        </div>
+
+        <div className="bg-gray-200 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-bold text-rust mb-4">Help Us Keep Going</h2>
+          <p className="text-lg mb-4">
+            We currently have funding for several dozen spay/neuter surgeries, but the need in Brooks County is ongoing. <strong>Every donation directly funds the next cat's surgery and supports our foster efforts.</strong>
+          </p>
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="text-left">
+              <h3 className="font-bold text-rust mb-2">Your donation supports:</h3>
+              <ul className="list-disc ml-6 text-sm">
+                <li>Spay/neuter surgeries for community cats</li>
+                <li>Foster care supplies for mothers and kittens</li>
+                <li>Transportation to veterinary appointments</li>
+                <li>Emergency medical care for injured cats</li>
+              </ul>
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-bold text-rust mb-4">Sam's TNR is a 501(c)(3) nonprofit</p>
+              <p className="text-sm text-gray-600">All donations are tax-deductible and go directly to helping cats in need.</p>
+            </div>
+          </div>
+          <p>
+            <a href="/#donate" className="bg-rust text-white px-6 py-3 rounded-lg font-bold hover:bg-rust-dark transition-colors inline-block">Donate to Sam's TNR</a>
+          </p>
+        </div>
+      </article>
+    )
+  },
+  {
     slug: 'big-weekend-for-brooks-county-cats-february-2026',
     title: 'A Big Weekend for Quitman Cats: 5 More Spayed and Neutered',
     seoTitle: 'Big Weekend for Quitman Cats: 5 More Spayed & Neutered | Sam\'s TNR',
